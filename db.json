@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "user": "admin",
+      "bookName": "In Cold Blood",
+      "authorName": "Truman Capote",
+      "comments": "This is one of my favorite books! Its a mystery but also a real story",
+      "rating": "4",
+      "status": "good"
+    },
+    {
+      "user": "admin",
+      "bookName": "Romeo and Juliet",
+      "authorName": "William Shakespeare",
+      "comments": "Was not a huge fan, this really dragged on",
+      "rating": "2",
+      "status": "bad"
+    },
+    {
+      "user": "Katherine",
+      "bookName": "The Secret Chapter",
+      "authorName": "G. Coleman",
+      "comments": "Coming out soon",
+      "rating": "3",
+      "status": "good"
+    },
+    {
+      "user": "Katherine",
+      "bookName": "q",
+      "authorName": "q",
+      "comments": "q",
+      "rating": "2",
+      "status": "good"
+    },
+    {
+      "bookName": "AdminTest",
+      "authorName": "admin",
+      "comments": "Another Test",
+      "rating": "3",
+      "status": "good",
+      "user": "admin"
+    },
+    {
+      "bookName": "KathTest",
+      "authorName": "Katherine",
+      "comments": "Another Test",
+      "rating": "4",
+      "status": "good",
+      "user": "Katherine"
+    },
+    {
+      "bookName": "OneMore",
+      "authorName": "Me",
+      "comments": "s",
+      "rating": "1",
+      "status": "bad",
+      "user": "admin"
+    },
+    {
+      "bookName": "CheckCheck",
+      "authorName": "Kt",
+      "comments": "s",
+      "rating": "1",
+      "status": "bad",
+      "user": "Katherine"
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin"
+    }
+  ]
+}
