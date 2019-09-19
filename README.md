@@ -1,74 +1,29 @@
 Assignment 3 - Persistence: Two-tier Web Application with Flat File Database, Express server, and CSS template
 ===
 
-Due: September 16th, by 11:59 AM.
+## Book Tracker 2.0
 
-This assignnment continues where we left off, extending it to use the most popular Node.js server framework (express), a flat file database suitable for small applications (lowdb), and a CSS application framework / template of your choice (Boostrap, Material Design, Semantic UI, Pure etc.)
+Book Tracker
+I love to read but I often find myself forgetting the book suggestions that people tell me, or vice versa not being able to provide suggestions on the spot. This project is an organizational tool to keep track of all the books you have read and you want to read, showing not only the name of the books and authors but also a comments section and ratings which furthermore sort the books into sections based on if you did or didn't like them. I've personally already started using the website, transitioning over from keeping my "To Read" list in my Notes on my phone, which was hard to visualize unlike my website. While this is a personal organizational tool at this time, in the future I could envision it as a forum for book lovers to share their best/worst book picks.
 
+Note: Almost all the time, clicking the buttons will automatically update the tables (I have my loadData function for the tables called in all of the onclick functions) but sometimes if the website has been sitting open for a while you need to refresh the page if a button was pressed but the tables aren't automatically updating.
 
-Baseline Requirements
----
+As far as authentication is concerned, I used the passport local strategy. The main reason was because I understood the documentation for it the most and there seemed to be a lot of resources with info about it. When logging in I would suggest using username: admin password: admin or username: Katherine password: kt because those are the accounts I have added the most data for. That said you can always make your own account and start
+tracking books that you want to read too! Additionally, I used lowdb for the database, I have actually used lowdb before for a small project so it seemed like the logical choice to use it again and get some more practice.
+The CSS framework I used was bootstrap. To be honest before this class I knew extremely little about web development but people always throw around words like 'node' and 'css' and 'bootstrap' so I decided it was finally time for me to really in depth understand what everyone is talking about. Also bootstrap just seems like the most common.
+I had some custom changes to the background color and the buttons. Even though white might look cleaner, the background color I have just makes me feel relaxed, and if I'm going to stare at this website for over a week I wanted to be relaxed while doing so, also it kind of reminded me of the color of a book page which fit the theme.
+The five express middleware packages I used are: passport, session, timeout, bodyparser, and helmet. Passport is for authentication of which I used the local strategy, session I used to help keep track of who was logged in so that people wouldn't have to start over on refresh,
+timeout cuts off requests when they take too long and thus time out, bodyparser helps with parsing and in particular can be used in conjunction with passport, and helmet helps set http response headers.
+I had a lot of issues with different types of inputs, whenever I would switch from a standard textbox my requests would time out. I also had trouble with passport for a while before finally getting it!
 
-Your application is required to implement the following functionalities:
-
-- a `Server`, created using Express (no alternatives will be accepted for this assignment)
-- a `Results` functionality which shows the entire dataset residing in the server's memory
-- a `Form/Entry` functionality which allows users to add, modify, and delete data items (must be all three!) associated with their user name / account.
-- Use of at least five [Express middleware packages](https://expressjs.com/en/resources/middleware.html). Explore! 
-- Basic authentication using the [Passport middleware](http://www.passportjs.org) for Express (this counts as one of your five middleware packages). We encourage using the Local strategy, but OAuth (Open Authentication) can also be used for additional technical achievement. The course staff cannot help you with the various flavors of OAuth strategies. YOU MUST PROVIDE US WITH ACCOUNT CREDENTIALS TO LOGIN TO YOUR APPLICATION IF YOU USE OAUTH. The course staff cannot be expected to have credentials for any particular OAuth service.
-- Persistent data storage in between server sessions. [lowdb](https://github.com/typicode/lowdb) is a suitable database package for this assignment and will be discussed in class.
-- Use of a [CSS framework or template](https://github.com/troxler/awesome-css-frameworks). This should do the bulk of your styling/CSS for you and be appropriate to your application. For example, don't use [NES.css](https://nostalgic-css.github.io/NES.css/) (which is awesome!) unless you're creating a game or some type of retro 80s site.
-
-Your application is required to demonstrate the use of the following concepts:
-
-HTML:
-- HTML input tags and form fields of various flavors (`<textarea>`, `<input>`, checkboxes, radio buttons etc.)
-- HTML that can display all data *for a particular authenticated user*. Note that this is different from the last assignnment, which required the display of all data in memory on the server.
-
-Note that it might make sense to have two simple pages for this assignment, one that handles login / authentication, and one that contains the rest of your application. For this assignment, it is acceptable to simply create new user accounts upon login if none exist, however, you must alert your users to this fact. If you're not using OAuth 
-
-CSS:
-- CSS styling should primarily be provided by your chosen template/framework. Oftentimes a great deal of care has been put into designing CSS templates; don't override their stylesheets unless you are extremely confident in your graphic design capabilities. The idea is to use CSS templates that give you a professional looking design aesthetic without requiring you to be a graphic designer yourself.
-
-JavaScript:
-- At minimum, a small amount of front-end JavaScript to get / fetch data from the server. See the [previous assignment](https://github.com/cs4241-19a/a2-shortstack) for reference.
-
-Node.js:
-- A server using Express, at least five pieces of Express middleware, and a persistent database (a flat file using lowdb is great).
-
-Deliverables
----
-
-Do the following to complete this assignment:
-
-1. Implement your project with the above requirements. A good potential starting point is to use the "hello-express" project template inside of Glitch; this appears as an option when you hit the "New Project" button. Use the work you did in the last assignment as a reference to implement functionality, as well as the notes from class on 9/9 and 9/12.
-2. If you developed your project locally, deploy your project to Glitch, and fill in the appropriate fields in your package.json file.
-3. Test your project to make sure that when someone goes to your main page on Glitch, it displays correctly.
-4. Ensure that your project has the proper naming scheme `a3-yourname` so we can find it.
-5. Fork this repository and modify the README to the specifications below. You do not need to include any of your project files in this repo (we will see those on Glitch), you only need to update and commit the README file.
-6. Create and submit a Pull Request to the original repo. Name the pull request using the following template: `a3-gitname-firstname-lastname`.
-
-Sample Readme (delete the above when you're ready to submit, and modify the below so with your links and descriptions)
----
-
-## Your Web Application Title
-
-your glitch link e.g. http://a3-charlieroberts.glitch.me
-
-Include a very brief summary of your project here. Images are encouraged, along with concise, high-level text. Be sure to include:
-
-- the goal of the application
-- challenges you faced in realizing the application
-- what authentication strategy / database you chose to use and why (choosing one because it seemed the easiest to implement is perfectly acceptable)
-- what CSS framework you used and why.
-  - include any modifications to the CSS framework you made via custom CSS you authored.
-- the five Express middleware packages you used and a short (one sentence) summary of what each one does.
+Link: https://a3-ktrose1.glitch.me/
 
 ## Technical Achievements
-- **Tech Achievement 1**: I used OAuth authentication via the GitHub strategy
-- **Tech Achievement 2**: I used over ten Express middleware packages, enabling me to create a server that...
+- **User Specific View**: I have authorized user specific data so when people login they only see their books throughout all three tables. I achieved this entirely server side so that looking for the 'currentUser' wouldn't clutter up the front end.
+- **Multiple Databases**: I have two seperate 'databases' aka json files for users and data. This keeps the data seperate and if one file is corrupted I will still at least have the other and not lose everything. The user field in db.json corresponds (like a foreign key) to the username field in users.json so that you can still always connect the two.
+- **Express Session**: The session middleware took my a while to fully understand but I believe it was one of the most useful pieces of middleware. In my case it creates and keeps a session until someone signs out. This way people can refresh/leave the website and come back to it and they won't have to login every single time, and instead can view their data during their session. As a user I would be very annoyed if I constant had to login so this middleware package was important for my to implement.
 
 ### Design/Evaluation Achievements
-- **Design Achievement 1**: I tested my application using screen reading software, and found that...
-- **Design Achievement 2**: I followed best practices for accessibility, including providing alt attributes for images and using semantic HTML. There are no `<div>` or `<span>` elements in my document.
-- **Design Achievement 3**: We tested the application with n=X users, finding that...
+- **User Input**: I tested three different CSS frameworks: Bootstrap, Bulma, and Materialize. I then polled a couple of my friends and my roommates about which they like best before coming the the conclusion to use bootstrap.
+- **CSS**: I still kept some of my own CSS for the buttons and the background. I hoped to make the background feel like a book to set the mood of the website, and keep away from the classic sterile looking framework
+- **Create Account Page**: Though the directions said we could just let people login with a new uname/password and just add that to the db, I felt that as a user who didn't know that I would be discouraged from signing in unless I saw a specific place to create an account. So I added another page for account creation, to help minimize that confusion. I think that my login and account pages look very clean and professional, not unlike what you would see on a lot of other websites
